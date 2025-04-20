@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CollegeROI - Sign Up</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      width: 180px;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .form-container {
+      background-color: #f1f1f1;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-container input, .form-container select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #9a32f0;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .form-footer {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .form-footer a {
+      color: #6a1ebf;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="CollegeROI Logo.png" alt="CollegeROI Logo" />
+  </header>
+  <main>
+    <p style="margin-bottom: 0.5rem;">Already have an account? <a href="#">Login</a></p>
+    <div class="form-container">
+      <h2>Create Account</h2>
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password (min 8 characters)" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <select>
+        <option>How did you hear about us?</option>
+        <option>Google</option>
+        <option>Instagram</option>
+        <option>Friend/Family</option>
+        <option>Other</option>
+      </select>
+      <button type="submit">Get Started</button>
+      <div class="form-footer">
+        <p>By submitting your information, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

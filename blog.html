@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CollegeROI Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+    header {
+      background: linear-gradient(to right, #e0fff5, #ffffff);
+      padding: 1.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    .logo i {
+      margin-right: 0.5rem;
+    }
+    nav a {
+      margin: 0 1.2rem;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+    }
+    nav a.active {
+      border-bottom: 2px solid #2e7d32;
+      padding-bottom: 4px;
+    }
+    .cta {
+      background: #a020f0;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .blog-container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    }
+    .blog-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .blog-content {
+      padding: 1rem;
+    }
+    .blog-content h3 {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #1a492d;
+    }
+    .blog-content p {
+      font-size: 0.9rem;
+      color: #444;
+    }
+    .blog-content a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center;">
+  <img src="CollegeROI%20Logo.png" alt="CollegeROI Final Logo" style="width: 160px; height: auto;">
+</div>
+  <nav>
+    <a href="#">ABOUT</a>
+    <a href="#">SERVICES</a>
+    <a href="#">EXPERTS</a>
+    <a class="active" href="#">BLOG</a>
+    <a href="#">CONTACT</a>
+    <a class="cta" href="#">TRY FOR FREE</a>
+  </nav>
+</header>
+
+<main class="blog-container">
+  <div class="blog-card">
+    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Stacked Books" />
+    <div class="blog-content">
+      <p>4/11/25</p>
+      <h3>5 Ways CollegeROI Helps You Make Smarter College Decisions</h3>
+      <a href="blog1.html">Read More →</a>
+    </div>
+  </div>
+
+  <div class="blog-card">
+    <img src="https://images.unsplash.com/photo-1520975918108-c5a5f1c8c41f" alt="Statue students" />
+    <div class="blog-content">
+      <p>4/10/25</p>
+      <h3>How CollegeROI Empowers Parents with Financial Insights</h3>
+      <a href="blog2.html">Read More →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 CollegeROI Blog. All rights reserved.
+</footer>
+
+</body>
+</html>

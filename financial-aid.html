@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Financial Aid Tools - CollegeROI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+    aside {
+      width: 220px;
+      height: 100vh;
+      background: #fff;
+      border-right: 1px solid #ccc;
+      position: fixed;
+      padding: 1rem;
+    }
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 2rem;
+    }
+    aside ul li {
+      padding: 1rem 0.75rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+    }
+    aside ul li:hover {
+      background: #eee;
+      border-radius: 6px;
+    }
+    .icon-bank {
+      background: #24d2a8;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      color: white;
+    }
+    header {
+      margin-left: 240px;
+      padding: 1rem 2rem;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+    .stage-steps {
+      margin-left: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .stage-steps span {
+      background: #2e7d32;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      text-align: center;
+      line-height: 28px;
+      margin: 0 0.5rem;
+    }
+    .main {
+      margin-left: 240px;
+      padding: 2rem;
+    }
+    .loan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    .loan-table th,
+    .loan-table td {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .loan-table th {
+      background: #eee;
+    }
+    .federal-loans, .private-loans {
+      margin-top: 2rem;
+    }
+    .loan-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .loan-card {
+      background: white;
+      padding: 1rem;
+      flex: 1 1 200px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .loan-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .loan-card button {
+      background: #9c27b0;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    footer {
+      margin-left: 240px;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      background: #f0f0f0;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+<aside>
+  <div class="logo" style="text-align: center; margin-bottom: 2rem;">
+  <img src="CollegeROI%20Logo.png" alt="CollegeROI Logo" style="width: 120px; margin-top: 1rem;" />
+</div>
+  <ul>
+    <li><i class="fas fa-table-columns"></i> Dashboard</li>
+    <li><i class="fas fa-search"></i> Match</li>
+    <li><i class="fas fa-dollar-sign"></i> Cost</li>
+    <li><i class="fas fa-coins"></i> Salary</li>
+    <li><i class="fas fa-check-circle"></i> Decide</li>
+    <li><i class="fas fa-bank icon-bank"></i> Finance</li>
+  </ul>
+</aside>
+
+<header>
+  <h1>Student Loan Planner</h1>
+  <a href="#" style="color: #9c27b0; font-weight: bold;">Schedule Meeting with Financial Aid Experts</a>
+</header>
+
+<div class="stage-steps">
+  <span>1</span> Match → <span>2</span> Analyze → <span>3</span> Decide → <span>4</span> Finance
+</div>
+
+<div class="main">
+  <h2>Payment Calculator</h2>
+  <table class="loan-table">
+    <thead>
+      <tr>
+        <th>Edit</th><th>Loan</th><th>Class Year</th><th>Amount ($)</th><th>Interest Rate</th><th>Loan Term</th><th>Pri/Fed</th><th>Sub/Unsub</th><th>Monthly Payment</th><th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="10" style="text-align:center;">+ Add a Loan</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="federal-loans">
+    <h2>Federal Loans</h2>
+    <div class="loan-grid">
+      <div class="loan-card">
+        <img src="https://i.imgur.com/UQo9s8q.png" alt="Federal Student Aid"/>
+        <div>Federal Direct Student Loan</div>
+        <button>Apply</button>
+      </div>
+      <div class="loan-card">
+        <img src="https://i.imgur.com/UQo9s8q.png" alt="Federal Student Aid"/>
+        <div>Parent Plus Loan</div>
+        <button>Apply</button>
+      </div>
+      <div class="loan-card">
+        <img src="https://i.imgur.com/BdK9WXT.png" alt="Federal Pell"/>
+        <div>Pell Grant</div>
+        <button>Apply</button>
+      </div>
+      <div class="loan-card">
+        <img src="https://i.imgur.com/BdK9WXT.png" alt="Federal Grant"/>
+        <div>TEACH Grant</div>
+        <button>Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="private-loans">
+    <h2>Private Loans</h2>
+    <div class="loan-grid">
+      <div class="loan-card"><img src="https://i.imgur.com/W4eJdWv.png" alt="College Ave"/><div>College Ave</div><button>Apply</button></div>
+      <div class="loan-card"><img src="https://i.imgur.com/QuhMQBy.png" alt="Custom Choice"/><div>Custom Choice</div><button>Apply</button></div>
+      <div class="loan-card"><img src="https://i.imgur.com/cU4FaHe.png" alt="Sallie Mae"/><div>Sallie Mae</div><button>Apply</button></div>
+      <div class="loan-card"><img src="https://i.imgur.com/dyXjAjX.png" alt="SoFi"/><div>SoFi</div><button>Apply</button></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 CollegeROI. All rights reserved.
+</footer>
+
+</body>
+</html>
