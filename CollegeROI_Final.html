@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CollegeROI - Smarter College Planning</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+    html, body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+    header {
+      background: linear-gradient(to right, #006837, #009688);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      top: 0;
+      z-index: 999;
+  
+    }
+    .logo img {
+      height: 125px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    nav ul li {
+      position: relative;
+    }
+    /* Ensure chatbot widget stays fixed and always visible */
+iframe[src*="tawk"] {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 999999 !important;
+}
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem;
+      text-decoration: none;
+      display: block;
+    }
+    nav ul li:hover > ul {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #00C853;
+      padding: 0.5rem 0;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    nav ul ul li {
+      width: 200px;
+    }
+    nav ul ul a {
+      color: white;
+      padding: 0.5rem;
+      display: block;
+    }
+    nav ul ul a:hover {
+      background: #00C853;
+    }
+    .register-btn {
+      background: #00C853;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .register-btn:hover {
+      background: #00E676;
+    }
+    main {
+      flex: 1;
+      padding: 0;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    main, header {
+  margin: 0;
+  padding: 0;
+  body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  margin-top: 0;
+  padding-top: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.65;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero-text {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  background: #3F51B5;
+  color: whitesmoke;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.hero-btn:hover {
+  background: #3F51B5;
+}
+}
+    footer {
+      background-color: #004d40;
+      color: #b2dfdb;
+      padding: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 250px;
+      margin: 1rem;
+    }
+    .footer-col h2, .footer-col h3 {
+      color: #69f0ae;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    .footer-col ul li a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .subscribe-input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+    .subscribe-button {
+      padding: 0.75rem 1.25rem;
+      background: white;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<header>
+<div class="logo">
+<img alt="CollegeROI Logo" src="CollegeROI%20Logo.png"/>
+</div>
+<nav>
+<ul>
+<li><a href="#">About</a></li>
+<li>
+<a href="#">Find Colleges</a>
+<ul>
+<li>
+<li><a href="compare.html">By Major</a></li>
+<li><a href="compare.html">By Location</a></li>
+<li><a href="compare.html">By ROI</a></li>
+</ul>
+<li>
+  <a href="#">Financial Aid</a>
+  <ul>
+    <li><a href="talk-to-expert.html">Talk to Expert</a></li>
+    <li><a href="#">Scholarships</a></li>
+    <a href="financial-aid.html">Grants & Loans</a>
+    <li><a href="#">FAFSA Help</a></li>
+  </ul>
+</li>
+<li><a href="compare.html">Compare</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a class="register-btn" href="signup.html">Register For Free</a></li>
+</ul>
+</nav>
+</header>
+<main>
+  <section class="hero-section">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>  
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <h2>Your roadmap to college success starts here</h2>
+        <p>Plan smarter, invest wisely, and give your child the future they deserve without the burden of overwhelming debt</p>
+        <a href="signup.html" class="hero-btn">Create Free Account</a>
+      </div>
+    </div>
+  </section>  
+<section style="background:#e6f0fa; padding:4rem 2rem;">
+  <div class="section-wrapper" style="text-align: center;">
+<h2 style="color:#2e7d32;text-transform:uppercase;">Our Services</h2>
+<div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
+<div style="background:white;padding:1.5rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);width:300px;">
+<img src="https://cdn-icons-png.flaticon.com/512/1930/1930265.png" style="height:100px;"/><h3>CROI Platform</h3><p>Compare true costs, ROI by major, and personalize your best-fit list.</p>
+</div>
+<div style="background:white;padding:1.5rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);width:300px;">
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" style="height:100px;"/><h3>Expert Consulting</h3><p>Schedule 1-on-1 sessions to boost your loan application and aid strategy.</p>
+</div>
+<div style="background:white;padding:1.5rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);width:300px;">
+<img src="https://cdn-icons-png.flaticon.com/512/2247/2247878.png" style="height:100px;"/><h3>SAT Preparation</h3><p>Interactive prep plans and personalized progress tracking.</p>
+</div>
+</div>
+</div>
+</section>
+<section style="background:#f4f4f4;padding:4rem 2rem;text-align:center;">
+<h2 style="color:#2e7d32;text-transform:uppercase;">Why CollegeROI?</h2>
+<div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;">
+<div style="width:300px;background:white;padding:2rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+<i class="fas fa-user-plus fa-2x" style="color:#2e7d32;"></i><h3>Free Registration</h3><p>Start exploring colleges at no cost.</p>
+</div>
+<div style="width:300px;background:white;padding:2rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+<i class="fas fa-chart-line fa-2x" style="color:#2e7d32;"></i><h3>Financial Planning</h3><p>Estimate expenses &amp; budget early.</p>
+</div>
+<div style="width:300px;background:white;padding:2rem;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+<i class="fas fa-university fa-2x" style="color:#2e7d32;"></i><h3>Loan Assistance</h3><p>Explore low-interest loan options with guidance.</p>
+</div>
+</div>
+<li style="list-style: none;"><a class="register-btn" href="signup.html">Register Now</a></li>
+</section>
+<section style="background: #f9f9f9; padding: 4rem 2rem; text-align: center;">
+  <h2 style="color:#2e7d32;text-transform:uppercase;">Our Partner</h2>
+
+  <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+    <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); width: 200px;">
+      <img src="Partner1.jpg" alt="Partner 1" style="width: 100%; height: auto;" />
+    </div>
+    <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); width: 200px;">
+      <img src="Partner2.jpg" alt="Partner 2" style="width: 100%; height: auto;" />
+    </div>
+  </div>
+</section>
+<section style="background: #f9f9f9; padding: 4rem 2rem; text-align: center;">
+  <div class="section-wrapper">
+    <h2 style="color:#2e7d32;text-transform:uppercase;">Our Team</h2>
+    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+
+      <div style="width: 260px; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="Nick.png" alt="Nick Gronda"
+     style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 0 auto;">
+        <div style="padding: 1.5rem;">
+          <h3 style="margin: 0.5rem 0;">Nick Gronda</h3>
+          <p style="color: #666;">CEO / Founder</p>
+        </div>
+      </div>
+
+      <div style="width: 260px; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="Lucas.png" alt="Lucas Sicard" 
+        <img src="Nick.png" alt="Nick Gronda"
+     style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 0 auto;">
+        <div style="padding: 1.5rem;">
+          <h3 style="margin: 0.5rem 0;">Lucas Sicard</h3>
+          <p style="color: #666;">CTO</p>
+        </div>
+      </div>
+
+      <div style="width: 260px; background-color: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; text-align: center;">
+        <img src="Minh.png" alt="Minh Ngo" <img src="Nick.png" alt="Nick Gronda"
+        style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 0 auto;">
+  
+        <div style="padding: 1.5rem;">
+          <h3 style="margin: 0.5rem 0;">Minh Ngo</h3>
+          <p style="color: #666;">Data Scientist</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section style="background:#e6f0fa;padding:4rem 2rem;text-align:center;">
+  <h2 style="color:#2e7d32;text-transform:uppercase;">From Our Blog</h2>
+  <div class="blog-section" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+    <div class="blog-card" style="width: 320px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; background: white;">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Notebook and coffee" style="width: 100%; height: auto;" />
+      <div class="content" style="padding: 1rem;">
+        <p style="margin: 0.5rem 0;">4/11/25</p>
+        <h3>5 Ways CollegeROI Helps You Make Smarter College Decisions</h3>
+        <p><a href="blog.html" style="color: #2e7d32; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+    <div class="blog-card" style="width: 320px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); overflow: hidden; background: white;">
+      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754" alt="Statue students" style="width: 100%; height: auto;" />
+      <div class="content" style="padding: 1rem;">
+        <p style="margin: 0.5rem 0;">4/10/25</p>
+        <h3>How CollegeROI Empowers Parents with Financial Insights</h3>
+        <p><a href="blog.html" style="color: #2e7d32; text-decoration: none;">Read More →</a>
+      </div>
+    </div>
+  </div>  
+</section>
+</main>
+<footer>
+<div class="footer-col">
+<h2>CollegeROI</h2>
+<p>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-facebook"></i>
+<i class="fab fa-youtube"></i>
+</p>
+</div>
+<div class="footer-col">
+<ul>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Experts</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h3>All things admissions and financial aid.</h3>
+<input class="subscribe-input" placeholder="Email Address" type="email"/>
+<button class="subscribe-button">SUBSCRIBE</button>
+</div>
+  <div style="width: 100%; text-align: center; margin-top: 2rem; font-size: 0.9rem;">
+  © 2025 CollegeROI. All rights reserved.
+</div>
+</footer>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/680b272dc5e000190807979e/1iplp22tg';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+</body>
+</html>

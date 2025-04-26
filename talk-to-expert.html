@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talk to Expert - CollegeROI</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+/* HEADER */
+header {
+  background: linear-gradient(to right, #006837, #009688);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* LOGO */
+.logo {
+  height: 120px;
+}
+
+/* NAVIGATION */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+/* DROPDOWN */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: white;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  border-radius: 4px;
+  z-index: 999;
+}
+
+nav ul li ul li {
+  padding: 0.5rem 1.5rem;
+  white-space: nowrap;
+}
+
+nav ul li ul li a {
+  color: black;
+}
+
+nav ul li ul li a:hover {
+  color: #006837;
+}
+
+/* CTA BUTTON */
+.register-btn {
+  background: #00c853;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* PAGE CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* EXPERT CARD WRAPPER */
+.expert-card {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* INDIVIDUAL CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  max-width: 300px;
+  flex: 1 1 260px;
+  text-align: center;
+}
+
+/* CARD IMAGE */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+/* CALL TO ACTION BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #b64fc8;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #9333ea;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <img src="CollegeROI Logo.png" alt="CollegeROI Logo" class="logo" />
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="#">Find Colleges</a>
+          <ul>
+            <li><a href="#">By Major</a></li>
+            <li><a href="#">By Location</a></li>
+            <li><a href="#">By ROI</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Financial Aid</a>
+          <ul>
+            <li><a href="#">Talk to Expert</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">Loan Assist</a></li>
+            <li><a href="#">FAFSA Help</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Compare</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a class="register-btn" href="signup.html">Register For Free</a></li>
+      </ul>
+    </nav>
+  </header>  
+<div class="container">
+<h1>Talk to an Expert</h1>
+<p>Schedule a 1-on-1 admissions or financial aid consulting session with our in-house experts.</p>
+<div class="expert-card">
+<div class="card">
+<img alt="Lawrence Alexander II" src="expert1.jpg"/>
+<h3>Lawrence Alexander II</h3>
+<p>Associate Director of Admissions</p>
+<p>Brown University</p>
+<a class="btn" href="#">Book a Call</a>
+</div>
+<div class="card">
+<img alt="Jonny Stevens" src="expert2.jpg"/>
+<h3>Jonny Stevens</h3>
+<p>Associate Director of Financial Aid</p>
+<p>Endicott College</p>
+<a class="btn" href="#">Book a Call</a>
+</div>
+</div>
+</div>
+</body>
+</html>

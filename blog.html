@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CollegeROI Blog</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; }
+    header {
+      background: linear-gradient(to right, #006837, #009688);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; align-items: center; }
+    nav ul li a { text-decoration: none; color: white; font-weight: bold; }
+    .logo img { height: 50px; }
+    .blog-section { padding: 4rem 2rem; background: #e6f0fa; }
+    .blog-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+    .blog-card {
+      background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden; width: 300px; cursor: pointer; transition: transform 0.3s ease;
+    }
+    .logo img {
+      height: 125px;
+    }
+    .blog-card:hover { transform: scale(1.03); }
+    .blog-card img { width: 100%; height: 180px; object-fit: cover; }
+    .blog-content { padding: 1rem; }
+    .blog-content h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .blog-content p { color: #666; font-size: 0.9rem; }
+    .blog-full-content { display: none; padding: 2rem; text-align: center; }
+    .blog-full-content.active { display: block; animation: fadeIn 0.8s ease-in-out; }
+    footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #555; }
+    .loader {
+      display: none; margin: 2rem auto; border: 6px solid #f3f3f3; border-top: 6px solid #006837; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img alt="CollegeROI Logo" src="CollegeROI%20Logo.png"/>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Find Colleges</a></li>
+      <li><a href="#">Financial Aid</a></li>
+      <li><a href="#">Compare</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Register For Free</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="blog-section">
+  <div class="blog-grid">
+    <div class="blog-card" onclick="showBlog(0)">
+      <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?fit=crop&w=800&q=80" alt="Blog 1">
+      <div class="blog-content">
+        <h3>5 Ways CollegeROI Helps You Make Smarter College Decisions</h3>
+        <p>4/11/25</p>
+      </div>
+    </div>
+    <div class="blog-card" onclick="showBlog(1)">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?fit=crop&w=800&q=80" alt="Blog 2">
+      <div class="blog-content">
+        <h3>How CollegeROI Empowers Parents with Financial Insights</h3>
+        <p>4/10/25</p>
+      </div>
+    </div>
+    <div class="blog-card" onclick="showBlog(2)">
+      <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?fit=crop&w=800&q=80" alt="Top Tips for Maximizing College Financial Aid">
+      <div class="blog-content">
+        <h3>Top Tips for Maximizing College Financial Aid</h3>
+        <p>4/09/25</p>
+      </div>
+    </div>
+    <div class="blog-card" onclick="showBlog(3)">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=800&q=80" alt="Blog 4">
+      <div class="blog-content">
+        <h3>Choosing the Right College for ROI: A Guide</h3>
+        <p>4/08/25</p>
+      </div>
+    </div>
+    <div class="blog-card" onclick="showBlog(4)">
+      <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?fit=crop&w=800&q=80" alt="Blog 5">
+      <div class="blog-content">
+        <h3>Why Early Planning Saves Thousands in College Costs</h3>
+        <p>4/07/25</p>
+      </div>
+    </div>
+    <div class="blog-card" onclick="showBlog(5)">
+      <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?fit=crop&w=800&q=80" alt="Blog 6">
+      <div class="blog-content">
+        <h3>How Scholarships Can Boost Your College ROI</h3>
+        <p>4/06/25</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="loader" id="loader"></div>
+<div class="blog-full-content" id="fullContent"></div>
+
+<footer>
+  &copy; 2025 CollegeROI Blog. All rights reserved.
+</footer>
+
+<script>
+const blogs = [
+  `CollegeROI helps students and parents make smarter choices by offering clear, comparative ROI data based on major, school, and location...`,
+  `CollegeROI empowers families by offering real-time insights into college costs and potential returns, supporting better financial planning...`,
+  `Get expert tips on maximizing scholarships, grants, and aid opportunities to make college more affordable...`,
+  `Choosing the right college isn't just about prestige — it's about financial fit and long-term ROI. Here's how you can assess your best options...`,
+  `Planning early helps you secure better aid packages, scholarships, and maximize savings. Start while your child is still in high school...`,
+  `Learn how strategic scholarship applications can massively boost your college ROI, reducing debt and improving future earnings...`
+];
+
+function showBlog(index) {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  document.querySelector('.blog-section').style.display = 'none';
+  document.getElementById('loader').style.display = 'block';
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('fullContent').classList.add('active');
+    document.getElementById('fullContent').innerHTML = `
+      <h2>Blog Detail</h2>
+      <p>${blogs[index]}</p>
+      <button onclick="goBack()" style="margin-top:2rem;padding:0.5rem 1rem;background:#006837;color:white;border:none;border-radius:8px;">Back to Blogs</button>
+    `;
+  }, 600);
+}
+
+function goBack() {
+  document.querySelector('.blog-section').style.display = 'block';
+  document.getElementById('fullContent').classList.remove('active');
+  document.getElementById('fullContent').innerHTML = '';
+}
+</script>
+
+</body>
+</html>
