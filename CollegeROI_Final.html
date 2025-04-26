@@ -252,19 +252,21 @@ iframe[src*="tawk"] {
 </header>
 <main>
   <section class="hero-section">
-    <video width="100%" height="auto" controls autoplay muted loop>
-  <source src="Video.mp4" type="Video/mp4">
-  Your browser does not support the video tag.
-</video>  
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>  
+
+    <div class="video-overlay"></div>   <!-- 🔥 Add this line -->
+
     <div class="hero-overlay">
-    <div class="video-overlay"></div>
       <div class="hero-text">
         <h2>Your roadmap to college success starts here</h2>
         <p>Plan smarter, invest wisely, and give your child the future they deserve without the burden of overwhelming debt</p>
         <a href="signup.html" class="hero-btn">Create Free Account</a>
       </div>
     </div>
-  </section>  
+</section> 
 <section style="background:#e6f0fa; padding:4rem 2rem;">
   <div class="section-wrapper" style="text-align: center;">
 <h2 style="color:#2e7d32;text-transform:uppercase;">Our Services</h2>
