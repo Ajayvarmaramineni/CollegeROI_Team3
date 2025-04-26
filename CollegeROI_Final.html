@@ -245,6 +245,17 @@ iframe[src*="tawk"] {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    .footer-col p a {
+  margin: 0 10px;
+  font-size: 1.8rem;
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-col p a:hover {
+  transform: scale(1.2);
+  color: #006837; /* your CollegeROI green */
+}
   </style>
 </head>
 <body>
@@ -400,12 +411,18 @@ iframe[src*="tawk"] {
 </main>
 <footer>
 <div class="footer-col">
-<h2>CollegeROI</h2>
-<p>
-<i class="fab fa-instagram"></i>
-<i class="fab fa-facebook"></i>
-<i class="fab fa-youtube"></i>
-</p>
+  <h2>CollegeROI</h2>
+  <p>
+    <a href="https://www.instagram.com/croi.io/" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/croi.collegedecision?mibextid=LQQJ4d" target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/@croi-inc" target="_blank">
+      <i class="fab fa-youtube"></i>
+    </a>
+  </p>
 </div>
 <div class="footer-col">
 <ul>
