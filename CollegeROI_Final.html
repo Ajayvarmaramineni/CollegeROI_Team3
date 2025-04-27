@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CollegeROI - Smarter College Planning</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
@@ -167,6 +167,12 @@ iframe[src*="tawk"] {
   }
 #nav-links ul {
   transition: all 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#nav-links.active ul {
+  max-height: 1000px; /* Adjust based on your content height */
 }
   #nav-links ul {
     flex-direction: column;
@@ -499,5 +505,15 @@ function toggleMenu() {
     dropdown.style.display = 'none';
   });
 }
+// Add this after your existing toggleMenu function
+document.addEventListener('click', function(event) {
+  const nav = document.getElementById('nav-links');
+  const menuIcon = document.querySelector('.menu-icon');
+  
+  if (!nav.contains(event.target) && event.target !== menuIcon) {
+    nav.classList.remove('active');
+    menuIcon.setAttribute('aria-expanded', 'false');
+  }
+});
 </script>
 </html>
