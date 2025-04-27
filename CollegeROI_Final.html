@@ -245,16 +245,26 @@ iframe[src*="tawk"] {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .footer-col p a {
+    .footer-col .social-icons a {
   margin: 0 10px;
-  font-size: 1.8rem;
-  color: #555;
-  transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 2rem;
+  transition: transform 0.3s ease;
 }
 
-.footer-col p a:hover {
+.footer-col .social-icons a:hover {
   transform: scale(1.2);
-  color: #006837; /* your CollegeROI green */
+}
+
+.footer-col .social-icons i.fa-instagram {
+  color: #E1306C; /* Instagram pink */
+}
+
+.footer-col .social-icons i.fa-facebook-f {
+  color: #1877F2; /* Facebook blue */
+}
+
+.footer-col .social-icons i.fa-youtube {
+  color: #FF0000; /* YouTube red */
 }
   </style>
 </head>
@@ -412,14 +422,14 @@ iframe[src*="tawk"] {
 <footer>
 <div class="footer-col">
   <h2>CollegeROI</h2>
-  <p>
-    <a href="https://www.instagram.com/college.roi/" target="_blank">
+  <p class="social-icons">
+    <a href="https://www.instagram.com/croi.io/" target="_blank" title="Follow us on Instagram">
       <i class="fab fa-instagram"></i>
     </a>
-    <a href="https://www.facebook.com/croi.collegedecision?mibextid=LQQJ4d" target="_blank">
-      <i class="fab fa-facebook"></i>
+    <a href="https://www.facebook.com/croi.collegedecision?mibextid=LQQJ4d" target="_blank" title="Follow us on Facebook">
+      <i class="fab fa-facebook-f"></i>
     </a>
-    <a href="https://www.youtube.com/@croi-inc" target="_blank">
+    <a href="https://www.youtube.com/@croi-inc" target="_blank" title="Subscribe to our YouTube">
       <i class="fab fa-youtube"></i>
     </a>
   </p>
