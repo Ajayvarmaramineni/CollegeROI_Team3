@@ -150,6 +150,23 @@ iframe[src*="tawk"] {
   margin-bottom: 2rem;
 }
 /* Mobile View */
+/* Step 1: Header adjustments for mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem;
+    position: fixed; /* Make header fixed on top */
+    width: 100%; /* Ensures full width */
+  }
+
+  .logo img {
+    height: 60px; /* Reduced height for mobile */
+  }
+
+  main {
+    margin-top: 80px; /* This prevents overlap of content and fixed header */
+  }
+}
+  /* Step 2: Mobile navigation adjustments */
 @media (max-width: 768px) {
   .menu-icon {
     display: block;
@@ -159,51 +176,62 @@ iframe[src*="tawk"] {
     margin-left: auto;
     z-index: 1000;
   }
-  #nav-links ul li:hover > ul {
-    display: block;
-    position: static;
-    animation: none;
+
+  nav#nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #006837;
+    display: none;
+    z-index: 999;
+    flex-direction: column;
   }
 
-#nav-links.active ul {
-  max-height: 500px; /* Adjust based on your content height */
-}
-  #nav-links ul {
-  flex-direction: column;
-  background: #006837;
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  padding: 1rem 0;
-  z-index: 999;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-  #nav-links.active ul {
+  nav#nav-links.active {
     display: flex;
   }
 
-  #nav-links ul ul {
-    background: rgba(0, 100, 55, 0.9); /* Slightly darker for better visibility */
-    margin-top: 0.5rem;
-  }
-
-  /* Fix for dropdown menus on mobile */
-  #nav-links ul ul {
-    position: static;
+  nav#nav-links ul {
+    flex-direction: column;
+    padding: 1rem 0;
     width: 100%;
-    box-shadow: none;
-    display: none;
+    margin: 0;
   }
 
-  #nav-links ul li:hover > ul {
+  nav#nav-links ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav#nav-links ul ul {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    background-color: #004d40;
+    display: none; /* initially hidden, opens on tap */
+  }
+
+  nav#nav-links ul li:hover > ul {
     display: block;
   }
 }
+/* Step 3: Adjust hero section text size */
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-section {
+    height: 100vh;
+    max-height: 600px; /* Prevents excessive height */
+  }
+}
+
 /* Desktop */
 .menu-icon {
   display: none;
