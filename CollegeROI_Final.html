@@ -93,14 +93,6 @@ iframe[src*="tawk"] {
     section {
       margin-bottom: 3rem;
     }
-    main, header {
-  margin: 0;
-  padding: 0;
-  body {
-  margin: 0;
-  padding: 0;
-}
-
 .hero-section {
   position: relative;
   height: 100vh;
@@ -166,27 +158,48 @@ iframe[src*="tawk"] {
     color: white;
     cursor: pointer;
     margin-left: auto;
+    z-index: 1000;
   }
-  
+  #nav-links ul li:hover > ul {
+    display: block;
+    position: static;
+    animation: none;
+  }
+#nav-links ul {
+  transition: all 0.3s ease;
+}
   #nav-links ul {
     flex-direction: column;
     background: #006837;
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 0;
     width: 100%;
     display: none;
     padding: 1rem 0;
     z-index: 999;
+    margin: 0;
   }
 
   #nav-links.active ul {
     display: flex;
   }
 
-  #nav-links ul li {
-    text-align: center;
-    margin: 1rem 0;
+  #nav-links ul ul {
+    background: rgba(0, 100, 55, 0.9); /* Slightly darker for better visibility */
+    margin-top: 0.5rem;
+  }
+
+  /* Fix for dropdown menus on mobile */
+  #nav-links ul ul {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    display: none;
+  }
+
+  #nav-links ul li:hover > ul {
+    display: block;
   }
 }
 /* Desktop */
@@ -204,7 +217,6 @@ iframe[src*="tawk"] {
 
 .hero-btn:hover {
   background: #3F51B5;
-}
 }
     footer {
       background-color: #004d40;
@@ -279,7 +291,8 @@ iframe[src*="tawk"] {
     <img alt="CollegeROI Logo" src="CollegeROI%20Logo.png"/>
   </div>
   
-  <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+  <!-- Hamburger icon -->
+  <i class="fas fa-bars menu-icon" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"></i>
 
   <nav id="nav-links">
     <ul>
@@ -475,6 +488,16 @@ iframe[src*="tawk"] {
 function toggleMenu() {
   var nav = document.getElementById('nav-links');
   nav.classList.toggle('active');
+  
+  // Toggle aria-expanded for accessibility
+  var isExpanded = nav.classList.contains('active');
+  document.querySelector('.menu-icon').setAttribute('aria-expanded', isExpanded);
+  
+  // Close dropdowns when menu is toggled
+  var dropdowns = document.querySelectorAll('#nav-links ul ul');
+  dropdowns.forEach(function(dropdown) {
+    dropdown.style.display = 'none';
+  });
 }
 </script>
 </html>
